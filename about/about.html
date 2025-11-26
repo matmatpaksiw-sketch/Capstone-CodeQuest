@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<header class="nav">
+    <a href="../index.html" class="brand">CodeQuest</a>
+    <ul class="menu">
+        <li><a href="../index.html">Home</a></li>
+         <li><a href="../index.html#preview">Gallery</a></li>
+         <li><a href="#" class="how-to-play-link">How To Play</a></li>
+         <li><a href="about.html">About Us</a></li>
+          <li><a href="../survey/survey.html">Survey</a></li>
+          <li><a href="../support/support.html">Support</a></li>
+    </ul>
+</header>
+<!-- ABOUT OUR TEAM SECTION -->
+<section class="about-team">
+  <h2 class="about-title">About Our Team</h2>
+  <p class="about-desc">
+    We are a group of researchers fulfilling our capstone requirement at <b>Pateros Technological College</b>, under the guidance of <b>Professor Clarence Baptista</b>. This project represents the culmination of our studies and our passion for creating an engaging, educational gaming experience.
+  </p>
+  <h2 class="meet-title">Meet the Researchers</h2>
+  <div class="team-container">
+    <!-- Leader in the middle top -->
+    <div class="leader-card">
+      <div class="profile-pic">
+        <img src="otocan.png" alt="Jerome Otocan">
+      </div>
+      <div class="profile-name">Jerome Otocan</div>
+      <div class="profile-role leader">Lead Developer</div>
+    </div>
+    <div class="members-row">
+      <div class="member-card">
+        <div class="profile-pic">
+          <img src="Mateo.png" alt="Mateo C. Aban">
+        </div>
+        <div class="profile-name">Mateo C. Aban</div>
+        <div class="profile-role">Back-end Developer</div>
+      </div>
+      <div class="member-card">
+        <div class="profile-pic">
+          <img src="james.png" alt="james siva">
+        </div>
+        <div class="profile-name">James Siva</div>
+        <div class="profile-role">Researcher & UI creator</div>
+      </div>
+      <div class="member-card">
+        <div class="profile-pic">
+          <img src="Dherric.png" alt="Dherric Dapoc">
+        </div>
+        <div class="profile-name">Dherric Dapoc</div>
+        <div class="profile-role">Researcher & Tester</div>
+      </div>
+      <div class="member-card">
+        <div class="profile-pic">
+          <img src="justine.png" alt="Justine Jophine Dua">
+        </div>
+        <div class="profile-name">Justine Jophine Dua</div>
+        <div class="profile-role">Researcher</div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="about-footer">
+    <h3 class="footer-title">Get in Touch</h3>
+    <div class="footer-leader">
+        Jerome Otocan (Leader / Lead Developer)
+    </div>
+    <div class="footer-contact">
+        PTC Email: <a href="mailto:jeotocan@paterostechnologicalcollege.edu.ph">jeotocan@paterostechnologicalcollege.edu.ph</a>
+        &nbsp; | &nbsp;
+        Facebook: <a href="https://www.facebook.com/jerome.otocan.1" target="_blank">https://www.facebook.com/jerome.otocan.1</a>
+    </div>
+    <div class="footer-school">
+        © 2025 Pateros Technological College. All Rights Reserved.
+    </div>
+</footer>
+
+<!-- ...your about content... -->
+
+<!-- HOW TO PLAY MODAL -->
+<div id="howToPlayModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>How to Play: CodeQuest</h2>
+    <h3>Getting Started</h3>
+    <ol>
+      <li>Click the <b>Download</b> button to get the game.</li>
+      <li>Install and launch CodeQuest.</li>
+      <li>Choose your character.</li>
+      <li>Complete quests, solve puzzles, and battle challenges to learn IT concepts.</li>
+      <li>Track your progress and climb the Achievements!</li>
+    </ol>
+    <h3>Game Premise</h3>
+    <p>
+      CodeQuest is an action-adventure game where every quest teaches you something new about technology, coding, and IT history. Level up your IT knowledge while having fun!
+    </p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.how-to-play-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('howToPlayModal').style.display = 'flex';
+    });
+    document.getElementById('closeModal').onclick = function() {
+        document.getElementById('howToPlayModal').style.display = 'none';
+    };
+    window.onclick = function(event) {
+        var modal = document.getElementById('howToPlayModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+});
+</script>
+</body>
+</html>

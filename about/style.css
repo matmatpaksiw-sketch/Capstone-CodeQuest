@@ -1,0 +1,338 @@
+/* IMPORT FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Crimson+Pro:wght@500;600&display=swap');
+
+/* GLOBAL RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* PAGE BACKGROUND */
+body {
+    background:
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)),
+        url('Background.png') no-repeat center/cover fixed;
+    min-height: 100vh;
+    font-family: "Kanit", sans-serif;
+    color: #ffffff;
+}
+
+/* NAVBAR */
+.nav {
+    width: 100%;
+    padding: 14px 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+}
+
+.brand {
+    font-family: "Crimson Pro", serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    margin-left: 180px;
+    text-decoration: none;
+}
+
+.brand:hover { color: #ffb533; }
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin-left: auto;
+    margin-right: 160px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu li a:hover {
+    color: #ffb533;
+    transform: scale(1.15);
+}
+
+/* ============================
+   ABOUT TEAM MAIN CONTAINER
+   ============================ */
+.about-team {
+    padding: 160px 40px; /* Fix gap from navbar */
+    text-align: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    animation: fadeIn 1.4s ease forwards;
+}
+
+/* ABOUT TITLE */
+.about-title {
+    font-family: "Crimson Pro", serif;
+    font-size: 60px;
+    color: #ffb533;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 181, 51, 0.5);
+}
+
+/* DESCRIPTION */
+.about-desc {
+    font-size: 20px;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    line-height: 1.7;
+    color: #eee;
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards 0.3s;
+}
+
+/* GOLD DIVIDER */
+.about-team::after {
+    content: "";
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #ffb533, transparent);
+    display: block;
+    margin: 35px auto;
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards 0.6s;
+}
+
+/* MEET THE TEAM TITLE */
+.meet-title {
+    font-family: "Crimson Pro", serif;
+    font-size: 48px;
+    color: #fff;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards 0.7s;
+}
+
+/* ============================
+   TEAM LAYOUT
+   ============================ */
+.team-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+
+/* ========== LEADER CARD ========== */
+.leader-card {
+    background: rgba(10, 20, 50, 0.75);
+    padding: 30px 40px;
+    border-radius: 20px;
+    width: 270px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(4px);
+    transform: translateY(40px);
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards 0.9s;
+    transition: 0.3s ease;
+}
+
+.leader-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(255, 181, 51, 0.35);
+}
+
+/* PROFILE PIC CIRCLE */
+.profile-pic {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px auto;
+    border: 3px solid #ffb533;
+    box-shadow: 0 0 18px rgba(255,181,51,0.4);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* NAME */
+.profile-name {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* ROLE */
+.profile-role {
+    color: #ffb533;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ========== MEMBERS ROW ========== */
+.members-row {
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Member cards */
+.member-card {
+    background: rgba(10, 20, 50, 0.7);
+    padding: 25px 35px;
+    border-radius: 18px;
+    width: 250px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    transform: translateY(40px);
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards;
+    transition: 0.3s ease;
+}
+
+/* Animation delays */
+.member-card:nth-child(1) { animation-delay: 1.1s; }
+.member-card:nth-child(2) { animation-delay: 1.2s; }
+.member-card:nth-child(3) { animation-delay: 1.3s; }
+.member-card:nth-child(4) { animation-delay: 1.4s; }
+
+/* Hover animation */
+.member-card:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 15px 40px rgba(255,181,51,0.35);
+}
+
+.about-footer {
+    margin-top: 1px;
+    padding: 40px 0 24px 0;
+    background: rgba(10, 20, 50, 0.7);
+    text-align: center;
+    color: #fff;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-family: "Kanit", sans-serif;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #232232;
+  padding: 32px 32px 24px 32px;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 90%;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  position: relative;
+  font-family: "Kanit", sans-serif;
+}
+
+.modal-content h2 {
+  color: #ffb533;
+  margin-bottom: 18px;
+}
+
+.modal-content h3 {
+  color: #ffb533;
+  margin-top: 18px;
+}
+
+.modal-content ol {
+  margin-left: 18px;
+  margin-bottom: 18px;
+}
+
+.close {
+  color: #fff;
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: #ffb533;
+}
+
+.footer-title {
+    color: #ffb533;
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.footer-leader {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-contact {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer-contact a {
+    color: #ffb533;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-contact a:hover {
+    color: #29b7cf;
+    text-decoration: underline;
+}
+
+.footer-school {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+    .about-title { font-size: 42px; }
+    .meet-title { font-size: 32px; }
+
+    .leader-card, .member-card {
+        width: 82%;
+    }
+
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+}

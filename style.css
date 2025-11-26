@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Crimson+Pro:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)),
+        url('Background.png') no-repeat center/cover fixed;
+    color: as #c9c9c9;
+    font-family: "Kanit", sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.nav {
+    width: 100%;
+    padding: 14px 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand {
+    font-family: "Crimson Pro", serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    margin-left: 180px;
+    text-decoration: none;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin-left: auto;
+    margin-right: 160px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    transform-origin: center;
+}
+
+.menu li a:hover {
+    color: #ffb533;
+    transform: scale(1.2);
+}
+
+/* HERO SECTION */
+.hero {
+    margin-top: 10px;
+    padding: 120px 30px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-center {
+    position: relative;
+    top: -50px; /* move hero content up */
+}
+
+.logo {
+    width: 550px;
+    margin-bottom: 15px;
+}
+
+.title {
+    font-family: "Crimson Pro", serif;
+    font-size: 40px;
+    color: #ffb533;
+    margin-bottom: 20px;
+}
+
+.desc {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.9;
+    color: #fff; /* Add this line */
+}
+
+.cta {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 14px 38px;
+    background: #ffb533;
+    color: #000;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.cta:hover {
+    background: #29b7cf;
+}
+
+/* CHARACTER IMAGES */
+.hero-char {
+    width: 300px;
+    position: absolute;
+    top: 400px;
+    opacity: 0.95;
+}
+
+.hero-char.left {
+    position: absolute;
+    left: 15%;      /* Move right by increasing this value */
+    top: 60px;
+    width: 300px;
+    opacity: 0.95;
+    z-index: 2;
+}
+
+/* INTRODUCTION SECTION (BOX) */
+.intro-game {
+    max-width: 1200px;
+    margin: 30px auto 60px auto;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.intro-box {
+    background: rgba(10, 20, 50, 0.85); /* stronger background */
+    border-radius: 24px;                 /* more rounded corners */
+    padding: 48px 48px;                  /* less vertical, more horizontal padding */
+    box-shadow: 0 8px 32px rgba(0,0,0,0.35); /* deeper shadow */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    text-align: left;
+    backdrop-filter: blur(2px);          /* subtle blur for glass effect */
+    border: 1.5px solid rgba(255,255,255,0.08); /* subtle border */
+    transition: box-shadow 0.3s;
+    width: 100%;
+}
+
+.intro-box:hover {
+    box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+    border-color: #ffb53355;
+}
+
+
+.intro-box h2 {
+    font-size: 60px;
+    color: #ffb533;
+    margin-bottom: 18px;
+}
+
+.intro-box p {
+    font-size: 23px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    color: #f0f0f0;
+    opacity: 0.95;
+}
+
+/* HOW TO PLAY SECTION (SLIDER) */
+.how-to-play {
+    max-width: 800px;
+    margin: 250px auto 100px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.how-to-play h2 {
+    font-size: 36px;
+    color: #ffb533;
+    margin-bottom: 30px;
+}
+
+/* Add this for a nice video preview section */
+.how-to-play video {
+    display: block;
+    margin: 32px auto 0 auto;
+    max-width: 700px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    background: #000;
+}
+
+/* ⭐ ADDED CHARACTER INSIDE INTRO BOX ⭐ */
+.intro-character {
+    width: 400px;
+    max-width: 45vw;
+    margin: 0;
+    opacity: 0.95;
+    float: none;
+    display: block;
+}
+.intro-content {
+    flex: 1;
+}
+
+@media (max-width: 900px) {
+    .intro-character {
+        float: none;
+        display: block;
+        margin: 0 auto 20px auto;
+        width: 180px;
+    }
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+
+  /* Add these for flex centering */
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: rgba(20, 20, 30, 0.98);
+  padding: 32px 32px 24px 32px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  position: relative;
+  font-family: "Kanit", sans-serif;
+  /* Remove margin: 40px auto; */
+}
+
+.modal-content h2 {
+  color: #ffb533;
+  margin-bottom: 18px;
+}
+
+.modal-content h3 {
+  color: #ffb533;
+  margin-top: 18px;
+}
+
+.modal-content ol {
+  margin-left: 18px;
+  margin-bottom: 18px;
+}
+
+.close {
+  color: #fff;
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: #ffb533;
+}
+.about-footer {
+    margin-top: 80px;
+    padding: 40px 0 24px 0;
+    background: rgba(10, 20, 50, 0.7);
+    text-align: center;
+    color: #fff;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-family: "Kanit", sans-serif;
+}
+
+.footer-title {
+    color: #ffb533;
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.footer-leader {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-contact {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer-contact a {
+    color: #ffb533;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-contact a:hover {
+    color: #29b7cf;
+    text-decoration: underline;
+}
+
+.footer-school {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes modalFadeIn {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 1; transform: scale(1); }
+}
+/* MOBILE */
+@media (max-width: 900px) {
+    .hero-char {
+        display: none;
+    }
+    .title {
+        font-size: 30px;
+    }
+    .logo {
+        width: 260px;
+    }
+    .desc {
+        font-size: 16px;
+    }
+    .menu li a {
+        font-size: 14px;
+    }
+    .cta {
+        padding: 10px 28px;
+        font-size: 16px;
+    }
+    .intro-box h2,
+    .how-to-play h2 {
+        font-size: 28px;
+    }
+    .intro-box p,
+    .slide p {
+        font-size: 16px;
+    }
+}

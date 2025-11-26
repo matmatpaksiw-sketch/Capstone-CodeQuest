@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&family=Crimson+Pro:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)),
+        url('Background.png') no-repeat center/cover fixed;
+    color: #c9c9c9;
+    font-family: "Kanit", sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.nav {
+    width: 100%;
+    padding: 14px 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.brand {
+    font-family: "Crimson Pro", serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #fff;
+    margin-left: 180px;
+    text-decoration: none;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    margin-left: auto;
+    margin-right: 160px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    transform-origin: center;
+}
+
+.menu li a:hover {
+    color: #ffb533;
+    transform: scale(1.2);
+}
+
+/* SUPPORT SECTION */
+.support-section {
+    padding: 160px 20px 60px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.support-title {
+    font-size: 48px;
+    color: #ffb533;
+    margin-bottom: 18px;
+    font-family: "Crimson Pro", serif;
+}
+
+.support-desc {
+    color: #eee;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.support-contacts.only {
+    background: rgba(10, 20, 50, 0.85);
+    padding: 36px 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    max-width: 420px;
+    margin: 0 auto;
+    text-align: left;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s ease forwards 0.3s; /* delayed animation */
+}
+
+.support-contacts.only h3 {
+    color: #ffb533;
+    margin-bottom: 18px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.support-contacts.only a {
+    color: #ffb533;
+    text-decoration: none;
+}
+
+.support-contacts.only a:hover {
+    text-decoration: underline;
+    color: #29b7cf;
+}
+
+.support-contacts.only p {
+    margin: 12px 0;
+    font-size: 1.1rem;
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.fade-in {
+    animation: modalFadeIn 0.4s ease forwards;
+}
+
+.modal-content {
+  background: rgba(20,20,30,0.98);
+  padding: 32px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  color: #fff;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  position: relative;
+  font-family: "Kanit", sans-serif;
+}
+
+.modal-content h2,
+.modal-content h3 {
+    color: #ffb533;
+}
+
+.modal-content ol {
+  margin-left: 18px;
+  margin-bottom: 18px;
+}
+
+.close {
+  color: #fff;
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close:hover {
+  color: #ffb533;
+}
+
+/* FOOTER */
+.about-footer {
+    margin-top: 80px;
+    padding: 40px 0 24px 0;
+    background: rgba(10, 20, 50, 0.7);
+    text-align: center;
+    color: #fff;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-family: "Kanit", sans-serif;
+    opacity: 0;
+    animation: fadeIn 1.4s ease forwards 0.5s;
+}
+
+.footer-title {
+    color: #ffb533;
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.footer-leader {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-contact {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer-contact a {
+    color: #ffb533;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-contact a:hover {
+    color: #29b7cf;
+    text-decoration: underline;
+}
+
+.footer-school {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-top: 10px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 900px) {
+    .support-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .support-form, .support-contacts {
+        max-width: 100%;
+        min-width: unset;
+        width: 100%;
+    }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Support | CodeQuest</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- NAVBAR -->
+<header class="nav">
+    <!-- From Support/ this goes up one level to the site root -->
+    <a href="../index.html" class="brand">CodeQuest</a>
+    <ul class="menu">
+    <li><a href="../index.html">Home</a></li>
+         <li><a href="../index.html#preview">Gallery</a></li>
+         <li><a href="#" class="how-to-play-link">How To Play</a></li>
+         <li><a href="../about/about.html">About Us</a></li>
+          <li><a href="../survey/survey.html">Survey</a></li>
+        <!-- Link to the current page (Support). Keeping the filename same-case as the file. -->
+        <li><a href="support.html">Support</a></li>
+    </ul>
+</header>
+
+<!-- SUPPORT SECTION -->
+<section class="support-section">
+    <h2 class="support-title">Contact & Support</h2>
+    <p class="support-desc">
+        Need help or want to reach out to the CodeQuest team? Contact us directly using the information below.
+    </p>
+    <div class="support-contacts only">
+        <h3>Reach us at:</h3>
+        <p><strong>Email:</strong>
+            <a href="mailto:jeotocan@paterostechnologicalcollege.edu.ph">jeotocan@paterostechnologicalcollege.edu.ph</a>
+        </p>
+        <p><strong>Facebook:</strong>
+            <a href="https://www.facebook.com/jerome.otocan.1" target="_blank" rel="noopener">Jerome Otocan</a>
+        </p>
+        <p><strong>School:</strong> Pateros Technological College</p>
+    </div>
+</section>
+
+<footer class="about-footer">
+    <h3 class="footer-title">Get in Touch</h3>
+    <div class="footer-leader">
+        Jerome Otocan (Leader / Lead Developer)
+    </div>
+    <div class="footer-contact">
+        PTC Email:
+        <a href="mailto:jeotocan@paterostechnologicalcollege.edu.ph">jeotocan@paterostechnologicalcollege.edu.ph</a>
+        &nbsp; | &nbsp;
+        Facebook:
+        <a href="https://www.facebook.com/jerome.otocan.1" target="_blank" rel="noopener">
+            https://www.facebook.com/jerome.otocan.1
+        </a>
+    </div>
+    <div class="footer-school">
+        © 2025 Pateros Technological College. All Rights Reserved.
+    </div>
+</footer>
+
+<!-- HOW TO PLAY MODAL -->
+<div id="howToPlayModal" class="modal" style="display:none; align-items:center; justify-content:center;">
+  <div class="modal-content">
+    <span class="close" id="closeModal" style="cursor:pointer;">&times;</span>
+    <h2>How to Play: CodeQuest</h2>
+    <h3>Getting Started</h3>
+    <ol>
+      <li>Click the <b>Download</b> button to get the game.</li>
+      <li>Install and launch CodeQuest.</li>
+      <li>Choose your character.</li>
+      <li>Complete quests, solve puzzles, and battle challenges to learn IT concepts.</li>
+      <li>Track your progress and climb the Achievements!</li>
+    </ol>
+    <h3>Game Premise</h3>
+    <p>
+      CodeQuest is an action-adventure game where every quest teaches you something new about technology, coding, and IT history. Level up your IT knowledge while having fun!
+    </p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var howLink = document.querySelector('.how-to-play-link');
+    if (howLink) {
+        howLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            var modal = document.getElementById('howToPlayModal');
+            if (modal) modal.style.display = 'flex';
+        });
+    }
+
+    var closeBtn = document.getElementById('closeModal');
+    if (closeBtn) {
+        closeBtn.onclick = function() {
+            var modal = document.getElementById('howToPlayModal');
+            if (modal) modal.style.display = 'none';
+        };
+    }
+
+    window.onclick = function(event) {
+        var modal = document.getElementById('howToPlayModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+});
+</script>
+</body>
+</html>

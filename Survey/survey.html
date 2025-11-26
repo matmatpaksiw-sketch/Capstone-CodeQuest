@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey | CodeQuest</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="nav">
+    <a href="../index.html" class="brand">CodeQuest</a>
+    <ul class="menu">
+       <li><a href="../index.html">Home</a></li>
+         <li><a href="../index.html#preview">Gallery</a></li>
+         <li><a href="#" class="how-to-play-link">How To Play</a></li>
+         <li><a href="../about/about.html">About Us</a></li>
+        <li><a href="survey.html">Survey</a></li>
+        <li><a href="../support/support.html">Support</a></li>
+    </ul>
+</header>
+
+<!-- SURVEY SECTION -->
+<section class="survey-section">
+    <h1 class="survey-title">We Want to Hear From You</h1>
+    <p class="survey-subtitle">
+        Thank you for playing CodeQuest. Your feedback supports the improvement of our game
+        and also helps us complete our academic project. Please use the survey below for both purposes.
+    </p>
+
+    <div class="survey-container">
+        <div class="survey-card">
+            <h2 class="survey-card-title">Survey</h2>
+            <p class="survey-card-text">
+                This form serves two purposes: <br><br>
+                <strong>Capstone Requirement:</strong> Your responses provide information needed for our academic study and project completion.<br><br>
+                <strong>Player Feedback:</strong> Share your thoughts about the game. Tell us what you enjoyed, what can be improved, and what features you hope to see next.
+            </p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc3VvL9um29IwCA069U_-2F_Uz23TfWFI28ro55uCOr4gHvhw/viewform" class="survey-btn primary" target="_blank">Start Survey</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="about-footer">
+    <h3 class="footer-title">Connect With Us</h3>
+    <div class="footer-leader">
+        Jerome Otocan (Leader / Lead Developer)
+    </div>
+    <div class="footer-contact">
+        PTC Email: <a href="mailto:jeotocan@paterostechnologicalcollege.edu.ph">jeotocan@paterostechnologicalcollege.edu.ph</a>
+        &nbsp; | &nbsp;
+        Facebook: <a href="https://www.facebook.com/jerome.otocan.1" target="_blank">https://www.facebook.com/jerome.otocan.1</a>
+    </div>
+    <div class="footer-school">
+        © 2025 Pateros Technological College. All Rights Reserved.
+    </div>
+</footer>
+
+<!-- HOW TO PLAY MODAL -->
+<div id="howToPlayModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>How to Play: CodeQuest</h2>
+    <h3>Getting Started</h3>
+    <ol>
+      <li>Click the <b>Download</b> button to get the game.</li>
+      <li>Install and launch CodeQuest.</li>
+      <li>Choose your character.</li>
+      <li>Complete quests, solve puzzles, and battle challenges to learn IT concepts.</li>
+      <li>Track your progress and climb the Achievements!</li>
+    </ol>
+    <h3>Game Premise</h3>
+    <p>
+      CodeQuest is an action-adventure game where every quest teaches you something new about technology, coding, and IT history. Level up your IT knowledge while having fun!
+    </p>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.how-to-play-link').addEventListener('click', function(e) {
+        e.preventDefault();
+        document.getElementById('howToPlayModal').style.display = 'flex';
+    });
+    document.getElementById('closeModal').onclick = function() {
+        document.getElementById('howToPlayModal').style.display = 'none';
+    };
+    window.onclick = function(event) {
+        var modal = document.getElementById('howToPlayModal');
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+});
+</script>
+</body>
+</html>
